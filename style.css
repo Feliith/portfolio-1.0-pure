@@ -24,6 +24,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
 
@@ -59,6 +60,80 @@ body {
     height: 3px;
     margin: auto;
     margin-top: -3px;
+}
+
+.nav-burger {
+    display: none;
+}
+
+.nav-burger:hover .burger-lines {
+    background: var(--contrast-light-color);
+    transition: .3s;
+}
+
+.burger-lines {
+    background: var(--standard-color);
+    width: 36px;
+    height: 2px;
+    margin: 8px 0px;
+}
+
+.line-01 {
+    transform: rotate(45deg) translateY(7px);
+}
+.line-02 {
+    display: none;
+}
+.line-03 {
+    transform: rotate(-45deg) translateY(-7px);
+}
+
+.nav-links {
+    background-color: var(--standard-color);
+    width: 300px;
+    height: 300px;
+    padding: 22px;
+    top: 83px;
+    right: 0;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    display: none;
+    z-index: 10;
+    list-style: none;
+    transform: translateX(100%);
+    transition: .5s;
+}
+
+.nav-links.active {
+    transform: translateX(0);
+}
+
+.nav-link {
+    opacity: 0;
+}
+
+.nav-link > a {
+    color: var(--font-01);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 24px;
+    transition: .3s;
+}
+
+.nav-link > a:hover {
+    color: var(--contrast-color);
+}
+
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
@@ -115,17 +190,15 @@ body {
 
 .green-ball {
     width: 70%;
-    animation: fadeInLeft .6s;
 }
 
 .felipe-image {
     position: absolute;
-    height: 68%;
+    height: 65%;
     margin-left: 5px;
     margin-top: -5px;
     border-radius: 50%;
     cursor: pointer;
-    animation: fadeInLeft .6s;
     transition: .3s;
 }
 
@@ -166,31 +239,31 @@ body {
 
 @media screen and (max-width: 1200px) {
     .felipe-image {
-        height: 56%;
+        height: 52%;
     }
 }
 
 @media screen and (max-width: 1100px) {
     .felipe-image {
-        height: 50%;
+        height: 48%;
     }
 }
 
 @media screen and (max-width: 1000px) {
     .felipe-image {
-        height: 46%;
+        height: 44%;
     }
 }
 
 @media screen and (max-width: 900px) {
     .felipe-image {
-        height: 42%;
+        height: 38%;
     }
 }
 
 @media screen and (max-width: 800px) {
     .felipe-image {
-        height: 38%;
+        height: 34%;
         margin-left: 3px;
         margin-top: -3px;
     }
@@ -235,8 +308,21 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    .nav {
+        justify-content: space-between;
+        padding: 0px 50px;
+    }
     .nav-contacts {
         display: none;
+    }
+    .nav-burger {
+        display: block;
+    }
+    .nav-links {
+        display: flex;
+    }
+    .nav-line {
+        width: 100%;
     }
 }
 
@@ -272,5 +358,8 @@ body {
     }
     .introduction-text > p {
         font-size: 18px;
+    }
+    .nav-links {
+        width: 100%;
     }
 }
