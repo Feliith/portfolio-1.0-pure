@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     --standard-dark-color: #98d671;
@@ -91,7 +91,7 @@ body {
 .nav-links {
     background-color: var(--standard-color);
     width: 300px;
-    height: 300px;
+    height: 260px;
     padding: 22px;
     top: 83px;
     right: 0;
@@ -206,6 +206,61 @@ body {
     transform: scale(98%);
     filter: blur(1px);
 }
+
+
+
+.contacts {
+    background: var(--dark-theme);
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contacts > p {
+    color: var(--font-01);
+    margin-bottom: 18px;
+    padding: 42px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.contacts-icons {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact {
+    border-radius: 50%;
+}
+
+.contact > img {
+    background: var(--standard-color);
+    transition: .3s;
+}
+
+.contact > img:hover {
+    background: var(--contrast-light-color);
+}
+
+
+
+.footer {
+    background: var(--dark-theme);
+    color: var(--standard-color);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
 
 @keyframes downArrows {
     from {
@@ -336,6 +391,11 @@ body {
     .introduction-text > p {
         font-size: 20px;
         line-height: 34px;
+    }
+
+    .contacts > p {
+        padding: 18px;
+        font-size: 18px;
     }
 }
 
