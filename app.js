@@ -33,3 +33,31 @@ const navLinksActive = () => {
     }
 }
 navLinksActive()
+
+const Slider = (btnL, btnR, sBox, qntSlide) => {
+    let pos = 0
+    btnL.onclick = () => {
+        if (pos < 1) {
+            pos = qntSlide - 1
+        } else {
+            pos--
+        }
+        sBox.style.marginLeft = `${-660 * pos}px`
+    }
+    btnR.onclick = () => {
+        if (pos == qntSlide - 1) {
+            pos = 0
+        } else {
+            pos++
+        }
+        sBox.style.marginLeft = `${-660 * pos}px`
+    }
+}
+
+const Sliders = () => {
+    const leftButton = document.querySelectorAll('.slider-button.left')
+    const rightButton = document.querySelectorAll('.slider-button.right')
+    const sliderBox = document.querySelectorAll('.slider-box')
+    Slider(leftButton[0], rightButton[0], sliderBox[0], 1)
+}
+Sliders()
