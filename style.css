@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --standard-dark-color: #98d671;
+    --standard-dark-color: #80bd5a;
     --standard-color: #9be979;
     --standard-light-color: ;
 
@@ -37,23 +37,6 @@ body {
     height: 83px;
 }
 
-.nav-contacts {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 40%;
-    list-style: none;
-}
-
-.nav-contact > img {
-    background: var(--standard-color);
-    transition: .3s;
-}
-
-.nav-contact > img:hover {
-    background: var(--contrast-color);
-}
-
 .nav-line {
     background: var(--standard-color);
     width: 90%;
@@ -64,6 +47,7 @@ body {
 
 .nav-burger {
     display: none;
+    cursor: pointer;
 }
 
 .nav-burger:hover .burger-lines {
@@ -89,21 +73,8 @@ body {
 }
 
 .nav-links {
-    background-color: var(--standard-color);
-    width: 300px;
-    height: 260px;
-    padding: 22px;
-    top: 83px;
-    right: 0;
-    position: fixed;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    display: none;
-    z-index: 10;
+    display: flex;
     list-style: none;
-    transform: translateX(100%);
-    transition: .5s;
 }
 
 .nav-links.active {
@@ -111,19 +82,102 @@ body {
 }
 
 .nav-link {
-    opacity: 0;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
 }
 
-.nav-link > a {
-    color: var(--font-01);
+.nav-link {
+    color: var(--standard-color);
     text-decoration: none;
     font-weight: 300;
     font-size: 24px;
     transition: .3s;
+    cursor: pointer;
+    padding: 18px 0;
 }
 
-.nav-link > a:hover {
+.nav-link.projects button {
+    background: none;
+    color: var(--standard-color);
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+    position: relative;
+    padding-left: 26px;
+}
+
+.nav-link.projects span.on {
+    transform: rotate(90deg);
+}
+
+.nav-link.projects button.on {
+    color: var(--contrast-lighter-color);
+}
+
+.nav-link.projects span {
+    font-size: 46px;
+    position: absolute;
+    top: -19px;
+    left: 0;
+    transition: .3s;
+}
+
+.nav-link.projects button:hover {
     color: var(--contrast-color);
+}
+
+.nav-link:hover {
+    color: var(--contrast-color);
+}
+
+.projects-links {
+    background: var(--standard-dark-color);
+    position: absolute;
+    width: 200px;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    top: 80px;
+    margin-left: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: .3s;
+    z-index: 10;
+}
+
+.projects-link {
+    color: var(--font-01);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: .3s;
+    height: 0;
+}
+
+.projects-link:hover {
+    color: var(--contrast-color);
+}
+
+.projects-links.on {
+    height: 200px;
+    padding: 12px 0;
+    opacity: 1;
+    cursor: default;
+    pointer-events: auto;
+}
+
+.projects-link.on {
+    opacity: 1;
 }
 
 @keyframes navFadeIn {
@@ -536,10 +590,40 @@ body {
         display: block;
     }
     .nav-links {
+        background-color: var(--standard-color);
+        width: 300px;
+        min-height: 260px;
+        padding: 22px;
+        top: 83px;
+        right: 0;
+        position: fixed;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 10;
+        list-style: none;
+        transform: translateX(100%);
+        transition: .5s;
+    }
+    .nav-link {
+        color: var(--font-01);
+        opacity: 0;
     }
     .nav-line {
         width: 100%;
+    }
+    .nav-link.projects {
+        flex-direction: column;
+    }
+    .nav-link.projects button {
+        color: var(--font-01);
+    }
+    .projects-links {
+        position: relative;
+        top: 0;
+        margin-left: 0;
+        width: 300px;
     }
 
     .project-hover {

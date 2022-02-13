@@ -61,3 +61,20 @@ const Sliders = () => {
     Slider(leftButton[0], rightButton[0], sliderBox[0], 1)
 }
 Sliders()
+
+const projectsLinksOn = () => {
+    const projectsLinksButton = document.querySelector('.nav-link.projects > button')
+    const projectLinksSpan = document.querySelector('.nav-link.projects span')
+    const projectsLinks = document.querySelector('.projects-links')
+    const projectsLink = document.querySelectorAll('.projects-link')
+
+    projectsLinksButton.onclick = () => {
+        projectsLinksButton.classList.toggle('on')
+        projectsLinks.classList.toggle('on')
+        for (let i = 0 ; i < projectsLink.length ; i++) {
+            projectsLink[i].classList.toggle('on')
+        }
+        projectLinksSpan.classList.toggle('on')
+    }
+}
+projectsLinksOn()
