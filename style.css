@@ -35,6 +35,13 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 83px;
+    width: 100%;
+    transition: .5s;
+}
+
+.nav.scroll {
+    position: fixed;
+    z-index: 10;
 }
 
 .nav-line {
@@ -43,6 +50,16 @@ body {
     height: 3px;
     margin: auto;
     margin-top: -3px;
+}
+
+.nav-line.scroll {
+    position: fixed;
+    z-index: 10;
+    top: 83px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn .5s forwards .3s;
 }
 
 .nav-burger {
@@ -180,6 +197,14 @@ body {
     opacity: 1;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
 @keyframes navFadeIn {
     from {
         opacity: 0;
@@ -187,6 +212,14 @@ body {
     } to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes navMove {
+    from {
+        transform: translateY(-100%);
+    } to {
+        transform: translateY(0);
     }
 }
 
@@ -618,6 +651,9 @@ body {
     }
     .nav-link.projects button {
         color: var(--font-01);
+    }
+    .nav-link.projects button.on {
+        margin-bottom: 16px;
     }
     .projects-links {
         position: relative;
