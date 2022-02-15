@@ -27,6 +27,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 
 .nav {
@@ -50,6 +54,8 @@ body {
     height: 3px;
     margin: auto;
     margin-top: -3px;
+    position: relative;
+    z-index: 10;
 }
 
 .nav-line.scroll {
@@ -75,8 +81,9 @@ body {
 .burger-lines {
     background: var(--standard-color);
     width: 36px;
-    height: 2px;
+    height: 3px;
     margin: 8px 0px;
+    border-radius: 12px;
 }
 
 .line-01 {
@@ -113,6 +120,8 @@ body {
     cursor: pointer;
     padding: 18px 0;
 }
+
+
 
 .nav-link.projects button {
     background: none;
@@ -159,14 +168,13 @@ body {
     height: 0;
     opacity: 0;
     pointer-events: none;
-    top: 80px;
+    top: 74px;
     margin-left: -40px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
     transition: .3s;
-    z-index: 10;
 }
 
 .projects-link {
@@ -195,6 +203,11 @@ body {
 
 .projects-link.on {
     opacity: 1;
+}
+
+.nav-link.projects {
+    position: relative;
+    z-index: 15;
 }
 
 @keyframes fadeIn {
@@ -352,17 +365,15 @@ body {
 
 
 .projects-sliders {
-    min-height: 600px;
-    padding-bottom: 200px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-direction: column;
     text-align: center;
 }
 
 .project-slider {
     width: 360px;
+    margin-bottom: 100px;
 }
 
 .slider-box {
@@ -377,7 +388,7 @@ body {
 .projects-sliders h2 {
     font-size: 42px;
     font-weight: 600;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .slider-button {
@@ -387,12 +398,14 @@ body {
     height: 60px;
     position: absolute;
     margin-top: 160px;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 .slider-button > img {
     width: 60px;
     height: 60px;
+    border-radius: 50%;
     transition: .3s;
 }
 
@@ -443,7 +456,7 @@ body {
 
 .project-hover:hover {
     width: 360px;
-    height: 620px;
+    height: 530px;
     padding: 32px;
     box-shadow: 0px 0px 3px #888888;
 }
@@ -482,7 +495,7 @@ body {
 
 .projects-sliders p {
     max-width: 400px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -534,9 +547,6 @@ body {
         height: 44%;
     }
 
-    .projects-sliders {
-        padding-bottom: 120px;
-    }
     .slider-button.left {
         left: 18%;
     }
@@ -664,7 +674,7 @@ body {
 
     .project-hover {
         width: 360px;
-        height: 620px;
+        height: 530px;
         padding: 32px;
         box-shadow: 0px 0px 3px #888888;
     }

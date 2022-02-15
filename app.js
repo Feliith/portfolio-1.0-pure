@@ -87,14 +87,24 @@ const projectsLinksOn = () => {
     const projectLinksSpan = document.querySelector('.nav-link.projects span')
     const projectsLinks = document.querySelector('.projects-links')
     const projectsLink = document.querySelectorAll('.projects-link')
+    const Projects = document.querySelector('.nav-link.projects')
 
-    projectsLinksButton.onclick = () => {
-        projectsLinksButton.classList.toggle('on')
-        projectsLinks.classList.toggle('on')
+    Projects.onmouseenter = () => {
+        projectsLinksButton.classList.add('on')
+        projectsLinks.classList.add('on')
         for (let i = 0 ; i < projectsLink.length ; i++) {
-            projectsLink[i].classList.toggle('on')
+            projectsLink[i].classList.add('on')
         }
-        projectLinksSpan.classList.toggle('on')
+        projectLinksSpan.classList.add('on')
+    }
+
+    Projects.onmouseleave = () => {
+        projectsLinksButton.classList.remove('on')
+        projectsLinks.classList.remove('on')
+        for (let i = 0 ; i < projectsLink.length ; i++) {
+            projectsLink[i].classList.remove('on')
+        }
+        projectLinksSpan.classList.remove('on')
     }
 }
 projectsLinksOn()
