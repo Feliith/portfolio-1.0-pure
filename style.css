@@ -123,6 +123,10 @@ html {
 
 
 
+.nav-link.projects {
+    height: 80px;
+}
+
 .nav-link.projects button {
     background: none;
     color: var(--standard-color);
@@ -168,7 +172,7 @@ html {
     height: 0;
     opacity: 0;
     pointer-events: none;
-    top: 74px;
+    top: 78px;
     margin-left: -40px;
     display: flex;
     align-items: center;
