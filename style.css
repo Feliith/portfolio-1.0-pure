@@ -678,8 +678,11 @@ html {
         top: 0;
         margin-left: 0;
         width: 300px;
+        height: 300px;
     }
-
+    .projects-link {
+        height: 80px;
+    }
     .project-hover {
         width: 360px;
         height: 530px;

@@ -89,22 +89,35 @@ const projectsLinksOn = () => {
     const projectsLink = document.querySelectorAll('.projects-link')
     const Projects = document.querySelector('.nav-link.projects')
 
-    Projects.onmouseenter = () => {
-        projectsLinksButton.classList.add('on')
-        projectsLinks.classList.add('on')
-        for (let i = 0 ; i < projectsLink.length ; i++) {
-            projectsLink[i].classList.add('on')
+    const windowWidth = window.innerWidth
+        
+    if (windowWidth > 600) {
+        Projects.onmouseenter = () => {
+            projectsLinksButton.classList.add('on')
+            projectsLinks.classList.add('on')
+            for (let i = 0 ; i < projectsLink.length ; i++) {
+                projectsLink[i].classList.add('on')
+            }
+            projectLinksSpan.classList.add('on')
         }
-        projectLinksSpan.classList.add('on')
-    }
-
-    Projects.onmouseleave = () => {
-        projectsLinksButton.classList.remove('on')
-        projectsLinks.classList.remove('on')
-        for (let i = 0 ; i < projectsLink.length ; i++) {
-            projectsLink[i].classList.remove('on')
+    
+        Projects.onmouseleave = () => {
+            projectsLinksButton.classList.remove('on')
+            projectsLinks.classList.remove('on')
+            for (let i = 0 ; i < projectsLink.length ; i++) {
+                projectsLink[i].classList.remove('on')
+            }
+            projectLinksSpan.classList.remove('on')
         }
-        projectLinksSpan.classList.remove('on')
+    } else {
+        Projects.onclick = () => {
+            projectsLinksButton.classList.toggle('on')
+            projectsLinks.classList.toggle('on')
+            for (let i = 0 ; i < projectsLink.length ; i++) {
+                projectsLink[i].classList.toggle('on')
+            }
+            projectLinksSpan.classList.toggle('on')
+        }
     }
 }
 projectsLinksOn()
